@@ -30,6 +30,7 @@ is_board_type() {
 
 echo_green "Retropie Install..."
 pushd "/home/${BASE_USER}" &>/dev/null
+echo_green "git clone Retropie-smartpi"
 git clone https://github.com/Yumi-Lab/Retropie-smartpi.git
 cd Retropie-smartpi
 sudo chmod +x retropie_setup.sh
