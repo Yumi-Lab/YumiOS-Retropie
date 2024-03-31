@@ -29,6 +29,9 @@ is_board_type() {
 }
 
 echo_green "Retropie Install..."
+sudo apt-get update
+echo_green "Dependencies Install for Mupen64Plus"
+sudo apt-get install -y libglew-dev libfreetype6-dev libaudiofile-dev libpng-dev libz-dev libsdl2-dev
 pushd "/home/${BASE_USER}" &>/dev/null
 echo_green "git clone Retropie-smartpi"
 git clone https://github.com/Yumi-Lab/Retropie-smartpi.git
