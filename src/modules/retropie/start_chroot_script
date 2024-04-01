@@ -29,25 +29,9 @@ is_board_type() {
 }
 
 echo_green "Retropie Install..."
-sudo apt-get update
-echo_green "Dependencies Install for Mupen64Plus"
-sudo apt-get install -y libglew-dev libfreetype6-dev libaudiofile-dev libpng-dev libz-dev libsdl2-dev
-pushd "/home/${BASE_USER}" &>/dev/null
-echo_green "git clone Retropie-smartpi"
 git clone https://github.com/Yumi-Lab/Retropie-smartpi.git
 cd Retropie-smartpi
-sudo chmod +x retropie_setup.sh
-sudo chmod +x SambaRetropie.sh
-sudo chmod +x retropie_packages.sh
-sudo chmod +x autostartES.sh
-sudo __debug=1 ./retropie_packages.sh setup basic_install
-#sudo ./retropie_packages.sh bluetooth depends
-#sudo ./retropie_packages.sh usbromservice
-#sudo ./retropie_packages.sh samba depends
-#sudo ./retropie_packages.sh samba install_shares
-#sudo ./autostartES.sh
-#sudo chmod 777 -R /opt/retropie/
-#sudo chmod +x /opt/retropie/configs/all/autostart.sh
+sudo ./install.sh
 cd ..
 popd &>/dev/null
 
